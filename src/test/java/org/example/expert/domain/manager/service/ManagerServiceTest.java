@@ -53,6 +53,7 @@ class ManagerServiceTest {
     void todo의_user가_null인_경우_예외가_발생한다() {
         // given
         AuthUser authUser = new AuthUser(1L, "a@a.com", UserRole.USER);
+        User user = User.fromAuthUser(authUser);
         long todoId = 1L;
         long managerUserId = 2L;
 
