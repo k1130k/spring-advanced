@@ -11,7 +11,7 @@ import java.util.Optional;
 public interface TodoRepository extends JpaRepository<Todo, Long> {
 
     @EntityGraph(attributePaths = {"user"})
-    Page<Todo> findAll(Pageable pageable);
+    Page<Todo> findAllByOrderByModifiedAtDesc(Pageable pageable);
 
     @EntityGraph(attributePaths = {"user"})
     Optional<Todo> findById(Long todoId);
